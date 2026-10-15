@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Admin · Rosarium</title>
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Main"></nav>
+  <main class="page">
+    <div class="page-head">
+      <h1>Admin overview</h1>
+      <p>How the classifier is being used across all accounts.</p>
+    </div>
+    <div class="error-box" id="adminError" role="alert" style="margin:0 0 18px"></div>
+
+    <div class="stats">
+      <div class="card stat accent spot"><div class="k">Total predictions</div><div class="v" id="aTotal">&mdash;</div><div class="s">all users</div></div>
+      <div class="card stat spot"><div class="k">Rose : weed split</div><div class="v" id="aSplit">&mdash;</div><div class="s" id="aSplitSub">&nbsp;</div></div>
+      <div class="card stat spot"><div class="k">Average confidence</div><div class="v" id="aConf">&mdash;</div><div class="s">across all predictions</div></div>
+      <div class="card stat spot"><div class="k">Active users</div><div class="v" id="aActive">&mdash;</div><div class="s" id="aActiveSub">last 7 days</div></div>
+    </div>
+
+    <div class="chart-grid">
+      <section class="card spot">
+        <h2>Rose vs weed</h2>
+        <p class="sub">Share of all predictions.</p>
+        <div class="donut-wrap">
+          <svg class="donut" id="donut" viewBox="0 0 170 170" role="img" aria-label="Rose versus weed predictions"></svg>
+          <ul class="legend" id="legend"></ul>
+        </div>
+      </section>
+      <section class="card spot">
+        <h2>Predictions over time</h2>
+        <p class="sub">The last 14 days.</p>
+        <svg class="line-chart" id="line" viewBox="0 0 640 250" role="img" aria-label="Predictions per day, last 14 days"></svg>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="js/api.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/admin.js"></script>
+</body></html>

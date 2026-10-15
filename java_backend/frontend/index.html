@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Dashboard · Rosarium</title>
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Main"></nav>
+  <main class="page">
+    <div class="page-head">
+      <h1 id="hello">Welcome back</h1>
+      <p>Here is a quick look at the plants you have checked so far.</p>
+    </div>
+
+    <div class="stats">
+      <div class="card stat spot"><div class="k">My scans</div><div class="v" id="sTotal">&mdash;</div><div class="s">all time</div></div>
+      <div class="card stat rose spot"><div class="k">Roses</div><div class="v" id="sRose">&mdash;</div><div class="s">identified</div></div>
+      <div class="card stat weed spot"><div class="k">Weeds</div><div class="v" id="sWeed">&mdash;</div><div class="s">flagged</div></div>
+      <div class="card stat accent spot"><div class="k">Average confidence</div><div class="v" id="sConf">&mdash;</div><div class="s">across my scans</div></div>
+    </div>
+
+    <div class="two-col">
+      <section class="card spot">
+        <h2>Recent scans</h2>
+        <p class="sub">Your five latest results.</p>
+        <ul class="recent" id="recent"><li class="empty">Loading\u2026</li></ul>
+        <div class="actions" style="margin-top:18px">
+          <a class="btn btn-primary" href="detect.html">Check a plant</a>
+          <a class="btn btn-ghost" href="history.html">See all history</a>
+        </div>
+      </section>
+
+      <section class="card spot">
+        <h2>About the model</h2>
+        <p class="sub">A MobileNetV2 neural network, tested on photos it had never seen.</p>
+        <div class="model-facts">
+          <div><b>86.1%</b><small>test accuracy</small></div>
+          <div><b>10</b><small>weed species</small></div>
+          <div><b>1,150</b><small>verified images</small></div>
+        </div>
+        <p class="note">It recognises roses mainly by their bloom, so photos that show a flower are the most reliable. Use it as a second opinion, and check before removing anything.</p>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="js/api.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/dashboard.js"></script>
+</body></html>

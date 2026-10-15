@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>History · Rosarium</title>
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Main"></nav>
+  <main class="page">
+    <div class="page-head">
+      <h1>Prediction history</h1>
+      <p>Every photo you have checked. Select a row to see the full result.</p>
+    </div>
+
+    <div class="toolbar">
+      <label class="field grow"><span>Search by file name</span>
+        <input class="input" id="search" type="search" placeholder="e.g. rose-bed.jpg"></label>
+      <label class="field"><span>Result</span>
+        <select class="input" id="label"><option value="all">All</option><option value="rose">Rose</option><option value="weed">Weed</option></select></label>
+      <label class="field"><span>From</span><input class="input" id="from" type="date"></label>
+      <label class="field"><span>To</span><input class="input" id="to" type="date"></label>
+      <button class="btn btn-ghost" id="clearFilters" type="button">Clear</button>
+    </div>
+
+    <p class="count" id="count"></p>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr><th>Photo</th><th>File</th><th>Result</th><th>Confidence</th><th>Date</th></tr></thead>
+        <tbody id="rows"><tr><td colspan="5" class="empty" style="padding:28px 18px">Loading&hellip;</td></tr></tbody>
+      </table>
+    </div>
+
+    <dialog class="modal" id="detail"><div class="modal-body" id="detailBody"></div></dialog>
+  </main>
+</div>
+<script src="js/api.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/history.js"></script>
+</body></html>
